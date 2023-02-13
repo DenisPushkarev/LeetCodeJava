@@ -2,12 +2,12 @@ package dip.leetcode.solutions;
 
 public class Solution70 {
     public int climbStairs(int n) {
-        int[] steps = new int[n+1];
-        steps[0] = 1;
-        steps[1] = 1;
+        int a = 1, b = 1, c = 1;
         for (int i=2; i <= n; i++) {
-            steps[i] = steps[i-1] + steps[i-2];
+            c = a + b;
+            a = b;
+            b = c;
         }
-        return steps[n];
+        return c;
     }
 }
