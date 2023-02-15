@@ -1,10 +1,12 @@
-import dip.leetcode.solutions.Solution121;
+import dip.leetcode.solutions.Solution53;
+
 public class Main {
 
     public static void main(String[] args) {
-        int[] a = {6,3,7,2,3,3};
-        Solution121 s121 = new Solution121();
-        int r = s121.maxProfit(a);
-        System.out.println("r = " + r);
+//        int[] input = {-2,1,-3,4,-1,2,1,-5,4};
+//        int[] input = {5,4,-1,7,8};
+        int[] input = {1};
+        int result = new Solution53().maxSubArray(input);
+        System.out.println("result: " + result);
     }
 }
