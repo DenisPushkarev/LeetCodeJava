@@ -1,12 +1,12 @@
-import java.util.Arrays;
-
-import dip.leetcode.solutions.Solution412;
+import dip.leetcode.solutions.Solution204;
 
 public class Main {
 
     public static void main(String[] args) {
-        Solution412 fizz_buzz = new Solution412();
-        System.out.println(Arrays.toString(fizz_buzz.fizzBuzz(15).toArray()));
+        Solution204 primes = new Solution204();
+        System.out.println("10: " + primes.countPrimes(10));
+        System.out.println("1: " + primes.countPrimes(1));
+        System.out.println("0: " + primes.countPrimes(0));
    }
 
 }
