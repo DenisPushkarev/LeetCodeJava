@@ -1,12 +1,14 @@
-import dip.leetcode.solutions.Solution204;
+import dip.leetcode.solutions.Solution326;
 
 public class Main {
 
     public static void main(String[] args) {
-        Solution204 primes = new Solution204();
-        System.out.println("10: " + primes.countPrimes(10));
-        System.out.println("1: " + primes.countPrimes(1));
-        System.out.println("0: " + primes.countPrimes(0));
-   }
+        int[] q = { 3, 4, 9, 27, 100 };
+        Solution326 pow = new Solution326();
+        for (int i = 0; i < q.length; i++) {
+            System.out.println("" + q[i] + ": " + pow.isPowerOfThree(q[i]));
+        }
+
+    }
 
 }
