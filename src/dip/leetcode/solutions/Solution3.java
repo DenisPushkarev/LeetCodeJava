@@ -2,29 +2,19 @@ package dip.leetcode.solutions;
 
 public class Solution3 {
   public int lengthOfLongestSubstring(String s) {
-    String substr = "", tmpString = "";
+    int[] set = new int[96];
+    int left = 0;
+    int c, max = 0;
     for (int i = 0; i < s.length(); i++) {
-      for (int j = i+1; j <= s.length(); j++) {
-        tmpString = s.substring(i, j);
-        // System.out.println(" tmpString: " + tmpString);
-        if (hasRepeated(tmpString))
-          break;
-        else if (tmpString.length() > substr.length())
-          substr = tmpString;
+      c = s.charAt(i) - 32;
+      while (set[c] > 0) {
+        int r = s.charAt(left) - 32;
+        set[r]--;
+        left++;
       }
-      // System.out.println("substr: " + substr);
+      set[c]++;
+      max = Math.max(max, i - left + 1);
     }
-    return substr.length();
-  }
-
-  boolean hasRepeated(String s) {
-    if (s.length() <= 1)
-      return false;
-    char lc = s.charAt(s.length() - 1);
-    for (int i = 0; i < s.length() - 1; i++) {
-      if (s.charAt(i) == lc)
-        return true;
-    }
-    return false;
+    return max;
   }
 }
